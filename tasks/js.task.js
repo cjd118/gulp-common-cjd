@@ -14,7 +14,7 @@ module.exports = function(gulp, plugins, overrides){
 
 		const properties = plugins._.merge({}, defaults, overrides);
 
-		gulp.src(properties.js.files)
+		return gulp.src(properties.js.files)
 		.pipe(plugins.gulpif(!properties.production, plugins.sourcemaps.init()))
 		.pipe(plugins.concat(properties.js.outputFile))
 		.pipe(plugins.uglify(properties.js.uglify))

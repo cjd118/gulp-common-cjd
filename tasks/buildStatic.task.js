@@ -17,7 +17,7 @@ module.exports = function(gulp, plugins, overrides){
 
 		const properties = plugins._.merge({}, defaults, overrides);
 
-		gulp.src(properties.buildStatic.files)
+		return gulp.src(properties.buildStatic.files)
 		.pipe(plugins.compileHandlebars(properties.buildStatic.templateData, properties.buildStatic.handlebars))
 		.pipe(plugins.rename(properties.buildStatic.rename))
 		.pipe(gulp.dest(properties.buildStatic.dest))

@@ -11,7 +11,7 @@ module.exports = function(gulp, plugins, overrides){
 
 		const properties = plugins._.merge({}, defaults, overrides);
 
-		gulp.src(properties.imagemin.files)
+		return gulp.src(properties.imagemin.files)
 		.pipe(plugins.imagemin(properties.imagemin.imagemin))
 		.pipe(gulp.dest(properties.imagemin.dest));
 	}

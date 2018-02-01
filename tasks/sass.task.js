@@ -15,7 +15,7 @@ module.exports = function(gulp, plugins, overrides){
 
 		const properties = plugins._.merge({}, defaults, overrides);
 
-		gulp.src(properties.sass.entryFile)
+		return gulp.src(properties.sass.entryFile)
 		.pipe(plugins.gulpif(!properties.production, plugins.sourcemaps.init()))
 		.pipe(plugins.sass(properties.sass).on('error', plugins.sass.logError))
 		.pipe(plugins.autoprefixer(properties.autoprefixer))
