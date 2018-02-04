@@ -1,5 +1,5 @@
 module.exports = function(gulp, plugins, overrides){
-	return function(){
+	return function(done){
 
 		const defaults = {
 			js: {

@@ -1,4 +1,4 @@
-describe('SASS Task', function(){
+describe('JS Task', function(){
 	const rimraf = require('rimraf');
 
 	beforeEach(function(done){
@@ -7,28 +7,28 @@ describe('SASS Task', function(){
 		});
 	});
 
-	it('produces css output file', function(done){
+	it('produces js output file called main.js', function(done){
 
-	const properties = {
-		sass: {
-			entryFile: './test/fixtures/scss/main.scss',
-			dest: './test/dist/css'
+		const properties = {
+			js: {
+				files: ['./test/fixtures/js/script.js'],
+				dest: './test/dist/js'
+			}
 		}
-	}
 
 		const fs = require('fs');
 		const assert = require('assert');
 		const gulp = require('../')(require('gulp'),properties);
 
-		gulp.task('test', ['sass'], function(){
+		gulp.task('testjs', ['js'], function(){
 			try {
-				fs.statSync('./test/dist/css/main.css');
+				fs.statSync('./test/dist/js/main.js');
 			} catch (err) {
 				assert(false, err);
 			}
 			done();
 		});
-		gulp.start('test');
+		gulp.start('testjs');
 
 	});
 });
