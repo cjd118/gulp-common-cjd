@@ -4,7 +4,7 @@
   "description": "A collection of common web-related gulp tasks",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -t 10000"
   },
   "author": "CJD <cjdisme@gmail.com>",
   "license": "MIT",
