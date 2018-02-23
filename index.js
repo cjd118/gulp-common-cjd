@@ -26,5 +26,7 @@ module.exports = function(gulpObject, properties = {}){
 	gulp.task('buildStatic', require('./tasks/buildStatic.task.js')(gulp,plugins,properties));
 	gulp.task('default', require('./tasks/default.task.js')());
 
+	gulp.task('watch', require('./tasks/watch.task.js')(gulp,plugins,properties));
+
 	return gulp;
 }
